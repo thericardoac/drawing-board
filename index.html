@@ -9,48 +9,48 @@
         <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
     </head>
 
-    <body>
-        <header class="wrap">
-            <h1>My Drawing Board</h1>
-        </header>
-            
-        <main class="wrap">
-            <section id="canvas-controls-section">
-                <fieldset>
-                    <legend>Canvas controls</legend>
-
-                    <div class="ctrls-group">
-                        <label for="slct-canvas-size">Canvas size: </label>
-                        <select name="slct-canvas-size" id="slct-canvas-size">
-                            <option value="8" selected>8 x 8</option>
-                            <option value="16">16 x 16</option>
-                            <option value="32">32 x 32</option>
-                            <option value="64">64 x 64</option>
-                        </select>
-                    </div>
-
-                    <div class="ctrls-group">
-                        <label for="color-picker">Trace color: </label>
-                        <input type="color" id="color-picker">
-                        <button id="btn-rainbow-mode">Rainbow</button>
-                    </div>
-                    
-                    <div class="ctrls-group">
-                        <button id="btn-eraser">Eraser</button>
-                        <button id="btn-clear-canvas">Clear canvas</button>
-                    </div>                    
-                </fieldset>
-            </section>
-
-            <section id="drawing-board-section">
-                <div id="canvas-background">
-                    <div id="canvas"></div>
-                </div>                
-            </section>
-        </main>
-            
-        <footer class="wrap">
-            2022 - Designed and developed by Ricardo Alvarado
-        </footer>       
+    <body>        
+        <div class="container">
+            <header>
+                <h1>My Drawing Board</h1>
+            </header>
+                
+            <main>
+                <section id="canvas-controls-section">
+                    <fieldset>
+                        <legend>Canvas controls</legend>
+    
+                        <div class="ctrls-group">
+                            <label for="slct-canvas-size">Canvas size: </label>
+                            <select name="slct-canvas-size" id="slct-canvas-size">
+                                <option value="8" selected>8 x 8</option>
+                                <option value="16">16 x 16</option>
+                                <option value="32">32 x 32</option>
+                                <option value="64">64 x 64</option>
+                            </select>
+                        </div>
+    
+                        <div class="ctrls-group">
+                            <label for="color-picker">Trace color: </label>
+                            <input type="color" id="color-picker">
+                            <button id="btn-rainbow-mode">Rainbow</button>
+                        </div>
+                        
+                        <div class="ctrls-group">
+                            <button id="btn-eraser">Eraser</button>
+                            <button id="btn-clear-canvas">Clear canvas</button>
+                        </div>                    
+                    </fieldset>
+                </section>
+    
+                <section id="drawing-board-section">
+                    <div id="canvas"></div>                
+                </section>
+            </main>
+                
+            <footer>
+                2022 - Designed and developed by Ricardo Alvarado
+            </footer>      
+        </div>
     </body>
 </html>
