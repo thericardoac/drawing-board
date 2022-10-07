@@ -12,11 +12,11 @@
         </header>
             
         <main class="wrap">
-            <section id="canvas-controls">
+            <section id="canvas-controls-section">
                 <fieldset>
                     <legend>Canvas controls</legend>
 
-                    <div class="canvas-size">
+                    <div class="ctrls-group">
                         <label for="slct-canvas-size">Canvas size: </label>
                         <select name="slct-canvas-size" id="slct-canvas-size">
                             <option value="8" selected>8 x 8</option>
@@ -26,19 +26,23 @@
                         </select>
                     </div>
 
-                    <div class="color-selection">
+                    <div class="ctrls-group">
                         <label for="color-picker">Color: </label>
                         <input type="color" id="color-picker">
+                        <button id="btn-rainbow-mode">Rainbow mode</button>
                     </div>
-
-                    <button id="btn-rainbow-mode">Rainbow mode</button>
-                    <button id="btn-eraser">Eraser</button>
-                    <button id="btn-clear-canvas">Clear canvas</button>
+                    
+                    <div class="ctrls-group">
+                        <button id="btn-eraser">Eraser</button>
+                        <button id="btn-clear-canvas">Clear canvas</button>
+                    </div>                    
                 </fieldset>
             </section>
 
-            <section id="drawing-board">
-                <div id="canvas"></div>
+            <section id="drawing-board-section">
+                <div id="canvas-background">
+                    <div id="canvas"></div>
+                </div>                
             </section>
         </main>
             
