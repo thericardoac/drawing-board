@@ -22,7 +22,8 @@ body {
     flex-direction: column;
     align-items: center;   
     overflow: hidden; /* For border-radius to work */
-    border-radius: 15px;        
+    border-radius: 15px;
+    box-shadow: gray 0 0 10px 2px;    
 }
 
 /* HEADER */
@@ -86,13 +87,19 @@ main {
     background-size: cover;    
     border: 2px solid lightgray;
     border-radius: 15px;
-    box-shadow: lightgray 0 0 6px 3px;   
+    box-shadow: lightgray 0 0 10px 2px;   
     padding: 4px;
 }
 
 #canvas {
     height: 100%;
     border: 1px solid black;
+    display: grid;
+    /*grid-template-columns: repeat(size, 1fr); Now JS handles the column-template*/
+}
+
+.canvas-dot {
+    border: 1px solid red;
 }
 
 /* FOOTER */
