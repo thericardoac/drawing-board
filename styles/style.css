@@ -98,8 +98,18 @@ main {
     /*grid-template-columns: repeat(size, 1fr); Now JS handles the column-template*/
 }
 
-.canvas-dot {
+/* .canvas-dot {
     border: 1px solid red;
+} */
+
+.rainbow-on {       
+    border-image: linear-gradient(90deg, red, orange, yellow, green, blue, purple) 1; 
+    color: blue;
+}
+
+.eraser-on {
+    border: 2px solid red;
+    color: red;
 }
 
 /* FOOTER */
