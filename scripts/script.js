@@ -1,49 +1,50 @@
 "use strict"
 
 // ******************************* FUNCTION DECLARATIONS ****************************
-// Draws canvas and its dots
-function drawCanvas(selectedSize) {    
+// Creates the dots inside the canvas
+function createCanvasDots(selectedSize) {
     // Sets canvas columns accordingly to selected size
-    canvas.style.gridTemplateColumns = "repeat(" + selectedSize + ", 1fr";
-    
-    // Multiply height by width to set the total dots to draw
+    canvas.style.gridTemplateColumns = "repeat(" + selectedSize + ", 1fr";        
+
+    // Multiply height by width to set the total dots to create
     let dotsToDraw = selectedSize * selectedSize;    
+    let canvasDot;
+    
     for (let i = 1; i <= dotsToDraw; i++) {
-        let canvasDot = document.createElement("div");
+        canvasDot = document.createElement("div");
         canvasDot.className = "canvas-dot";
-        canvasDot.id = "dot-" + i;      
+        canvasDot.id = "dot-" + i;                 
         canvas.appendChild(canvasDot);
-    }
-}
-
-// Deletes the dots inside the canvas so they can be recreated
-function deleteCanvas() {
-    let dotCount = document.querySelectorAll(".canvas-dot").length;
-    let currentDot;    
-
-    for (let i = 1; i <= dotCount; i++) {        
-        currentDot = document.querySelector("#dot-" + i);        
-        currentDot.remove();
-    }   
-}
-
-// Adds EventListener to every dot
-function addActionsToDot() {
-    let dotCount = document.querySelectorAll(".canvas-dot").length;
-    let currentDot;    
-
-    for (let i = 1; i <= dotCount; i++) {        
-        currentDot = document.querySelector("#dot-" + i);
-        currentDot.addEventListener("click", function() {
-            // Colors or erases de dot
+        
+        //Adds painting or erasing functionality to recently created dot        
+        canvasDot.addEventListener("mouseover", function() {                              
             if (!eraserMode) {
                 colorDot(i);
             } else {
                 eraseDot(i);
-            }
+            }            
         });        
-    }    
+    }
+
+    // Disables eraser mode so the user, can start drawing at canvas creation
+    //Useful if eraser mode is enabled at the time of clearing or selecting a new size canvas 
+    if (eraserMode) {
+        toggleEraserMode();
+    }
 }
+
+
+// Deletes every dot inside the canvas
+function deleteCanvasDots() {
+    let dotCount = canvas.querySelectorAll(".canvas-dot").length;
+    let dotToDelete;    
+
+    for (let i = 1; i <= dotCount; i++) {        
+        dotToDelete = canvas.querySelector("#dot-" + i);        
+        dotToDelete.remove();
+    }   
+}
+
 
 // Toggles Rainbow mode and applies style to rainbow button
 function toggleRainbowMode() {
@@ -55,6 +56,7 @@ function toggleRainbowMode() {
     }
     btnRainbow.classList.toggle("rainbow-on");    
 }
+
 
 // Toggles Eraser mode and applies style to eraser button
 function toggleEraserMode() {
@@ -68,6 +70,7 @@ function toggleEraserMode() {
     btnEraser.classList.toggle("eraser-on");    
 }
 
+
 // Generates a Random RGB color
 function generateRandomColor() {
     let rValue = Math.floor(Math.random() * 256);
@@ -77,22 +80,24 @@ function generateRandomColor() {
     return rgbColor;
 }
 
+
 // Colors the selected dot
 function colorDot(i) {
-    let currentDot = document.querySelector("#dot-" + i);
+    let dotToPaint = document.querySelector("#dot-" + i);
 
     if (!rainbowMode) {
-        currentDot.style.backgroundColor = dotColor;
+        dotToPaint.style.backgroundColor = dotColor;
     } else {
         dotColor = generateRandomColor();
-        currentDot.style.backgroundColor = dotColor;
+        dotToPaint.style.backgroundColor = dotColor;
     }
 }
 
+
 // Erases the selected dot
 function eraseDot(i) {
-    let currentDot = document.querySelector("#dot-" + i);
-    currentDot.style.background = "none";    
+    let dotToErase = document.querySelector("#dot-" + i);
+    dotToErase.style.background = "none";    
 }
 // *******************************************************************************
 
@@ -102,34 +107,25 @@ function eraseDot(i) {
 // Variables for canvas, controls and modes
 const canvas = document.querySelector("#canvas");
 const slctSize = document.querySelector("#slct-canvas-size");
+let selectedSize = slctSize.value;
 const colorPicker = document.querySelector("#color-picker");
+let dotColor = colorPicker.value;
 const btnRainbow = document.querySelector("#btn-rainbow-mode");
 let rainbowMode = false;
 const btnEraser = document.querySelector("#btn-eraser");
 let eraserMode = false;
 const btnClearCanvas = document.querySelector("#btn-clear-canvas");
 
-// Draws default size canvas and adds actions to every dot in the canvas
-let selectedSize = slctSize.value;
-drawCanvas(selectedSize);
-addActionsToDot();
+// Creates dots inside the canvas accordingly with the default size selected 
+createCanvasDots(selectedSize);
 
-// Gets the default color
-let dotColor = colorPicker.value;
-
-
-// ****************** GUI - EVENT LISTENERS **************************************
+// ***************************** GUI - EVENT LISTENERS **************************************
 // SIZE SELECTOR
-// When size changes, deletes all dots, recreates canvas with new size
-//and adds listeners to the dots. Disables Eraser mode if it is enabled
+// When size changes, deletes and creates the canvas dots again
 slctSize.addEventListener("change", function() {
-    deleteCanvas();
     selectedSize = slctSize.value;
-    drawCanvas(selectedSize);
-    addActionsToDot();
-    if (eraserMode) {
-        toggleEraserMode();
-    }  
+    deleteCanvasDots();
+    createCanvasDots(selectedSize);
 });
 
 
@@ -166,13 +162,9 @@ btnEraser.addEventListener("click", function() {
 });
 
 
-// Clears the whole canvas
+// CLEAR CANVAS BUTTON
+// Deletes and creates the canvas dots again
 btnClearCanvas.addEventListener("click", function() {
-    deleteCanvas();
-    selectedSize = slctSize.value;
-    drawCanvas(selectedSize);
-    addActionsToDot();
-    if (eraserMode) {
-        toggleEraserMode();
-    }
+    deleteCanvasDots();
+    createCanvasDots(selectedSize);
 });
