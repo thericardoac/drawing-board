@@ -1,11 +1,17 @@
 /******************* GENERAL STYLES ******************/
 :root {
+    /* Background colors */
     --primary-bg-color: #fee9ed;
-    --primary-font-color: #fdc4c5;
-
     --secondary-bg-color: whitesmoke;
+    --header-footer-color: #322540;
+
+    /* Other colors */
     --canvas-border-color: lightgray;
 
+    /* Font colors */
+    --primary-font-color: #fdc4c5;
+
+    /* Font families */
     --Chelsea-Market: 'Chelsea Market', cursive, sans-serif;
 }
 
