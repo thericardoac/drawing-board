@@ -1,5 +1,20 @@
 "use strict"
 
+// ****************************** VARIABLE DECLARATIONS *****************************
+// Variables for canvas, controls and modes
+const canvas = document.querySelector("#canvas");
+const slctSize = document.querySelector("#slct-canvas-size");
+let selectedSize = slctSize.value;
+const colorPicker = document.querySelector("#color-picker");
+let dotColor = colorPicker.value;
+const btnRainbow = document.querySelector("#btn-rainbow-mode");
+let rainbowMode = false;
+const btnEraser = document.querySelector("#btn-eraser");
+let eraserMode = false;
+const btnClearCanvas = document.querySelector("#btn-clear-canvas");
+
+
+
 // ******************************* FUNCTION DECLARATIONS ****************************
 // Creates the dots inside the canvas
 function createCanvasDots(selectedSize) {
@@ -105,16 +120,16 @@ function eraseDot(i) {
 
 // **************************** RUNTIME START ************************************
 // Variables for canvas, controls and modes
-const canvas = document.querySelector("#canvas");
-const slctSize = document.querySelector("#slct-canvas-size");
-let selectedSize = slctSize.value;
-const colorPicker = document.querySelector("#color-picker");
-let dotColor = colorPicker.value;
-const btnRainbow = document.querySelector("#btn-rainbow-mode");
-let rainbowMode = false;
-const btnEraser = document.querySelector("#btn-eraser");
-let eraserMode = false;
-const btnClearCanvas = document.querySelector("#btn-clear-canvas");
+// const canvas = document.querySelector("#canvas");
+// const slctSize = document.querySelector("#slct-canvas-size");
+// let selectedSize = slctSize.value;
+// const colorPicker = document.querySelector("#color-picker");
+// let dotColor = colorPicker.value;
+// const btnRainbow = document.querySelector("#btn-rainbow-mode");
+// let rainbowMode = false;
+// const btnEraser = document.querySelector("#btn-eraser");
+// let eraserMode = false;
+// const btnClearCanvas = document.querySelector("#btn-clear-canvas");
 
 // Creates dots inside the canvas accordingly with the default size selected 
 createCanvasDots(selectedSize);
