@@ -33,21 +33,21 @@ body {
 }
 
 .container {
-    width: 90%;
-    /* max-width: 915px; */
+    width: 95%;   
     display: flex;
     flex-direction: column;
     align-items: center;   
     overflow: hidden; /* For border-radius to work */
     border-radius: 0.937rem;
-    box-shadow: gray 0 0 10px 2px;    
+    background-color: var(--secondary-bg-color);
+    box-shadow: gray 0 0 10px 2px;
 }
 
 /* HEADER */
 header {
     width: 100%;
     background-color: var(--header-footer-color);
-    padding: 2.187rem 0;
+    padding: 1.5rem 0;
 }
 
 header h1 {
@@ -58,16 +58,14 @@ header h1 {
 
 /* MAIN AND SECTION CONTENT */
 main {
-    width: 100%;
-    background-color: var(--secondary-bg-color);
-    padding: 1.875rem 0;
+    width: 100%;    
+    padding: 1.5rem 0;
     display: flex;
-    flex-direction: column; 
-    /* justify-content: space-evenly;  */
+    flex-direction: column;    
 }
 
 section {
-    margin-bottom: 1.875rem;
+    margin-bottom: 1.5rem;
 }
 
 section:last-of-type {
@@ -143,7 +141,7 @@ section:last-of-type {
 footer {
     width: 100%;
     background-color: #322540; 
-    padding: 25px 0;   
+    padding: 25px 0;
     text-align: center;
     color: #fdc4c5;
 }
