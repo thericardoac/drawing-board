@@ -119,6 +119,7 @@ section:last-of-type {
     background-size: cover;    
     border: 2px solid lightgray;
     border-radius: 1rem;
+    overflow: hidden; /* For border-radius to work */
     box-shadow: lightgray 0 0 10px 2px;    
 }
 
