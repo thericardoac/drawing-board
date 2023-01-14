@@ -12,6 +12,7 @@ let rainbowMode = false;
 const btnEraser = document.querySelector("#btn-eraser");
 let eraserMode = false;
 const btnClearCanvas = document.querySelector("#btn-clear-canvas");
+let useDot = false;
 
 
 
