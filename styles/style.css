@@ -96,10 +96,6 @@ main {
     display: grid;    
 }
 
-/* .canvas-dot {
-    border: 1px solid red;
-} */
-
 .rainbow-on {       
     border-image: linear-gradient(90deg, red, orange, yellow, green, blue, purple) 1; 
     color: blue;
