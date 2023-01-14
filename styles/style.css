@@ -112,15 +112,16 @@ section:last-of-type {
 }
 
 /* DRAWING BOARD SECTION */
-#drawing-board-section {         
-    width: 500px;
-    height: 500px;
+#drawing-board-section {             
+    width: 94%;   
+    aspect-ratio: 1/1; 
+    height: 100%;
+    margin: 0 auto;    
     background-image: url("../images/canvas.png");
     background-size: cover;    
     border: 2px solid lightgray;
-    border-radius: 15px;
-    box-shadow: lightgray 0 0 10px 2px;   
-    padding: 4px;
+    border-radius: 1rem;
+    box-shadow: lightgray 0 0 10px 2px;    
 }
 
 #canvas {
