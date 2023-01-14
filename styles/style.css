@@ -1,8 +1,18 @@
 /******************* GENERAL STYLES ******************/
-* {
-    box-sizing: border-box;
+:root {
+    --primary-bg-color: #fee9ed;
+    --primary-font-color: #fdc4c5;
+
+    --secondary-bg-color: whitesmoke;
+    --canvas-border-color: lightgray;
+
+    --Chelsea-Market: 'Chelsea Market', cursive, sans-serif;
+}
+
+* {    
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
 }
 
