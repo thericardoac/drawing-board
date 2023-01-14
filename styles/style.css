@@ -46,14 +46,14 @@ body {
 /* HEADER */
 header {
     width: 100%;
-    background-color: #322540;
-    padding: 35px 0;      
+    background-color: var(--header-footer-color);
+    padding: 2.187rem 0;
 }
 
 header h1 {
-    font-family: 'Chelsea Market', cursive, sans-serif;
+    font-family: var(--Chelsea-Market);
     text-align: center;
-    color: #fdc4c5;
+    color: var(--primary-font-color);
 }
 
 /* MAIN CONTENT */
