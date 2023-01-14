@@ -114,7 +114,7 @@ function generateRandomColor() {
     let rValue = Math.floor(Math.random() * 256);
     let gValue = Math.floor(Math.random() * 256);
     let bValue = Math.floor(Math.random() * 256);
-    let rgbColor = "RGB(" + rValue + ", " + gValue + ", " + bValue;    
+    let rgbColor = "RGB(" + rValue + ", " + gValue + ", " + bValue + ")";
     return rgbColor;
 }
 
