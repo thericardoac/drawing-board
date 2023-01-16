@@ -9,7 +9,7 @@ Coded using HTML, CSS and JavaScript.
 Live preview at: https://thericardoac.github.io/drawing-board/
 
 ## The way to use the drawing board just changed!
-- Since the original way to use the canvas (just hovering to paint) causes
+Since the original way to use the canvas (just hovering to paint) causes
 the user to start painting as soon as it enters the canvas, it was
 considered to implement a click-and-drag feature to paint inside the canvas, but
 it introduced a bug where if the user, not knowing, clicks-and-drags the
