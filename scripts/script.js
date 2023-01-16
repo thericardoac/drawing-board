@@ -13,6 +13,7 @@ const btnEraser = document.querySelector("#btn-eraser");
 let eraserMode = false;
 const btnClearCanvas = document.querySelector("#btn-clear-canvas");
 let useDot = false;
+const btnInstructions = document.querySelector("#btn-instructions");
 
 
 
@@ -138,8 +139,28 @@ function eraseDot(i) {
     dotToErase.style.background = "none";    
 }
 
+// Shows the instructions for canvas use.
+function showInstructions() {
+    const instructions = 
+    `
+    *** BUTTONS ***
+    CANVAS SIZE -> Sets the canvas dimensions.
+    TRACE COLOR -> Sets the color to use.
+    RAINBOW -> Sets a random color to every dot painted.
+    ERASER -> Sets eraser mode.
+    CLEAR ALL -> Clears everything.    
+    ----------------------------------------------------------------------
+    *** HOW TO USE ***
+    ONE CLICK -> Enables/Disables the painter/eraser.
+    PAINT/ERASE -> Move in canvas when painter/eraser is enabled.
+    PAINT/ERASE DOT -> Double click when painter/eraser is enabled.
+    ----------------------------------------------------------------------
+    NOTE -> If you "leave" canvas, painter/eraser gets disabled.
+    `;
+    alert(instructions);
+}
 
-// ***************************** POPULATES THE CANVAS AT PAGE LOAD **************************************
+// ************************************** PAGE LOAD **************************************************
 // Creates dots inside the canvas accordingly with the default size selected. 
 createCanvasDots(selectedSize);
 
@@ -198,4 +219,10 @@ btnEraser.addEventListener("click", function() {
 btnClearCanvas.addEventListener("click", function() {
     deleteCanvasDots();
     createCanvasDots(selectedSize);
+});
+
+// INSTRUCTIONS BUTTON
+// Shows the instructions for canvas use.
+btnInstructions.addEventListener("click", function() {
+    showInstructions();
 });
