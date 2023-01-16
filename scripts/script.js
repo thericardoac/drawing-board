@@ -160,6 +160,8 @@ function showInstructions() {
     alert(instructions);
 }
 
+
+
 // ************************************** PAGE LOAD **************************************************
 // Creates dots inside the canvas accordingly with the default size selected. 
 createCanvasDots(selectedSize);
@@ -220,6 +222,7 @@ btnClearCanvas.addEventListener("click", function() {
     deleteCanvasDots();
     createCanvasDots(selectedSize);
 });
+
 
 // INSTRUCTIONS BUTTON
 // Shows the instructions for canvas use.
