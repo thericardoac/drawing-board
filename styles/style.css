@@ -7,6 +7,7 @@
 
     /* Other colors */
     --canvas-border-color: lightgray;
+    --eraser-color: red;
 
     /* Font colors */
     --primary-font-color: #fdc4c5;
@@ -25,22 +26,19 @@
 
 /******************* CONTENT STYLES *****************/
 body {
-    background-color: var(--primary-bg-color);
-    height: 100vh;
+    background-color: var(--primary-bg-color);    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container {
-    width: 95%;   
+    width: 90%;   
     display: flex;
     flex-direction: column;
-    align-items: center;   
-    overflow: hidden; /* For border-radius to work */
-    border-radius: 0.937rem;
+    align-items: center;
     background-color: var(--secondary-bg-color);
-    box-shadow: gray 0 0 10px 2px;
+    box-shadow: gray 0 0 0.625rem 0.125rem;
 }
 
 /* HEADER */
@@ -59,7 +57,7 @@ header h1 {
 /* MAIN AND SECTION CONTENT */
 main {
     width: 100%;    
-    padding: 1.5rem 0;
+    padding: 1.5rem 0;    
     display: flex;
     flex-direction: column;    
 }
@@ -102,7 +100,7 @@ section:last-of-type {
     font-size: 1rem;    
     padding: 0.3125rem 0.625rem;
     border-radius: 0.3125rem;
-    border: 2px solid gray;
+    border: 0.125rem solid gray;
 }
 
 .ctrls-group #color-picker {
@@ -112,15 +110,15 @@ section:last-of-type {
 /* DRAWING BOARD SECTION */
 #drawing-board-section {             
     width: 94%;   
-    aspect-ratio: 1/1; 
+    aspect-ratio: 1/1; /* For height to grow proportionally to width */
     height: 100%;
     margin: 0 auto;    
     background-image: url("../images/canvas.png");
     background-size: cover;    
-    border: 2px solid lightgray;
+    border: 0.0625rem solid var(--canvas-border-color);
     border-radius: 1rem;
     overflow: hidden; /* For border-radius to work */
-    box-shadow: lightgray 0 0 10px 2px;    
+    box-shadow: gray 0 0 0.625rem 0.125rem; 
 }
 
 #canvas {
@@ -134,14 +132,14 @@ section:last-of-type {
 }
 
 .ctrls-group .eraser-on {
-    border: 2px solid red;
-    color: red;
+    border: 0.125rem solid var(--eraser-color);
+    color: var(--eraser-color);
 }
 
 /* FOOTER */
 footer {
     width: 100%;
-    background-color: #322540; 
+    background-color: var(--header-footer-color); 
     padding: 1.5rem 0;
     text-align: center;    
     font-size: 0.75rem;
@@ -158,4 +156,63 @@ footer p:last-of-type {
 footer p,
 footer a {
     color: var(--primary-font-color);
+}
+
+/****************************** RESPONSIVE DESIGN ***********************/
+/* Very Small phones */
+@media only screen and (max-width: 330px){
+    #canvas-controls-section fieldset {
+        border: none;
+    }
+}
+
+
+/* TABLET */
+@media only screen and (min-width: 426px) {
+    html {
+        font-size: 18px;
+    }
+
+    #canvas-controls-section fieldset {    
+        max-width: 325px;
+    }
+}
+
+/* LAPTOP */
+@media only screen and (min-width: 900px) {
+    main {
+        flex-direction: row;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #canvas-controls-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+}
+
+/* LAPTOP L and UP */
+@media only screen and (min-width: 1025px) {
+    html {
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    #canvas-controls-section fieldset {    
+        max-width: 357px;
+    }
+
+    #drawing-board-section {
+        max-width: 745px;
+    }
 }
