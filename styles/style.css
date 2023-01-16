@@ -107,6 +107,12 @@ section:last-of-type {
     border-radius: 0.3125rem;    
 }
 
+.ctrls-group select:hover,
+.ctrls-group button:hover,
+.ctrls-group #color-picker:hover {
+    box-shadow: var(--primary-font-color) 0 0 0.3rem 0.2rem;
+}
+
 /* DRAWING BOARD SECTION */
 #drawing-board-section {             
     width: 94%;   
