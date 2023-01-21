@@ -30,6 +30,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0;
 }
 
 .container {
@@ -39,6 +41,8 @@ body {
     align-items: center;
     background-color: var(--secondary-bg-color);
     box-shadow: gray 0 0 0.625rem 0.125rem;
+    border-radius: 1rem;
+    overflow: hidden; /* For border radius to work */
 }
 
 /* HEADER */
