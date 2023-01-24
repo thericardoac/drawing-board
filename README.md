@@ -1,10 +1,10 @@
 # My Drawing board
 
-Well... to be fair, this is more like a painting canvas. You can change the "brush" color and canvas dimensions.
+Drawing board or painting canvas, call it like you want and let your imagination flow!
 
-This drawing board is a based on the etch-a-sketch.
+This project is based on the etch-a-sketch.
 
-Coded using HTML, CSS and JavaScript.
+Coded from scratch using HTML, CSS and JavaScript.
 
 Live preview at: https://thericardoac.github.io/drawing-board/
 
@@ -12,7 +12,7 @@ Live preview at: https://thericardoac.github.io/drawing-board/
 Since the original way to use the canvas (just hovering to paint) causes
 the user to start painting as soon as it enters the canvas, it was
 considered to implement a click-and-drag feature to paint inside the canvas, but
-it introduced a bug where if the user, not knowing, clicks-and-drags the
+it introduced a bug where if the user, not knowing, click-and-drags the
 invisible dot border, it will continue to paint/erase even if the user is no longer holding the mouse click.
 
 Because of both methods having disadvantages, it is that now, the canvas
