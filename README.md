@@ -1,14 +1,14 @@
 # My Drawing board
+![drawing](https://user-images.githubusercontent.com/112439514/214978853-2db029b0-dabb-4479-995c-9b29096d603c.png)
 
 Drawing board or painting canvas, call it like you want and let your imagination flow!
 
-This project is based on the etch-a-sketch.
+This project is based on the etch-a-sketch. Coded from scratch using HTML, CSS and JavaScript.
 
-Coded from scratch using HTML, CSS and JavaScript.
+### Live preview here
+https://thericardoac.github.io/drawing-board/
 
-Live preview at: https://thericardoac.github.io/drawing-board/
-
-## The way to use the drawing board just changed!
+### Why did the way to use it change?
 Since the original way to use the canvas (just hovering to paint) causes
 the user to start painting as soon as it enters the canvas, it was
 considered to implement a click-and-drag feature to paint inside the canvas, but
