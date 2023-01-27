@@ -1,5 +1,5 @@
 # Drawing board
-![drawing](https://user-images.githubusercontent.com/112439514/214978853-2db029b0-dabb-4479-995c-9b29096d603c.png)
+![drawing-tile](https://user-images.githubusercontent.com/112439514/215011992-9713f16a-28df-46b9-a316-a3cae67a50a2.jpg)
 
 ## Description 🖌 🎨
 Drawing board or painting canvas, call it like you want and let your imagination flow!
